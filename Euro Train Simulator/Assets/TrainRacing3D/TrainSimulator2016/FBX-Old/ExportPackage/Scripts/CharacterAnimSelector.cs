@@ -24,7 +24,7 @@ public class CharacterAnimSelector : MonoBehaviour
 		void OnEnable()
 		{
 		
-		if (isCharacterMoveOnStation || isCharaterAnimationEnable || GameManager.Instance.isCharaterAnimationEnable) {
+		if (isCharacterMoveOnStation || isCharaterAnimationEnable || (GameManager.Instance!=null && GameManager.Instance.isCharaterAnimationEnable)) {
 				SetAllStateFinalCondition ();
 			} else {
 				SetAllStateFalse ();

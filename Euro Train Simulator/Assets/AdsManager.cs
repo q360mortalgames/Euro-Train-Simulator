@@ -39,7 +39,6 @@ public class AdsManager : MonoBehaviour
             interstitialAd.Destroy();
             interstitialAd = null;
         }
-
         Debug.Log("Loading the interstitial ad.");
 
         // create our request used to load the ad.
@@ -67,6 +66,7 @@ public class AdsManager : MonoBehaviour
             });
     }
 
+    [ContextMenu("ShowAD")]
     public void ShowAd()
     {
         if (interstitialAd != null && interstitialAd.CanShowAd())
@@ -119,11 +119,5 @@ public class AdsManager : MonoBehaviour
                            "with error : " + error);
             LoadInterstitialAd();
         };
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

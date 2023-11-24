@@ -51,6 +51,11 @@ public class MenuPageHandler : MonoBehaviour
 
 	#region OnButtonAction
 
+	public void OnTestAdClicked()
+    {
+		AdsManager.Instance.ShowAd();
+    }
+
 	public void OnClick (string _click)
 	{
 		StartCoroutine (ieOnClick (_click));

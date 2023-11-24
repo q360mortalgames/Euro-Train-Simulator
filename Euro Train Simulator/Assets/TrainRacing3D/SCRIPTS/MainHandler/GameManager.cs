@@ -144,9 +144,9 @@ public class GameManager : MonoBehaviour
 
 	#region UpgradePurchase
 
-	[HideInInspector]
+	//[HideInInspector]
 	public List<string> TRAINS = new List<string> ();
-	string allTrainIDs = "";
+	string allTrainIDs = "";	
 
 	void SetInitialValueToPlayerPref ()
 	{	
