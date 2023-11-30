@@ -112,7 +112,12 @@ public class MenuPageHandler : MonoBehaviour
 			FreeCoinsPage.atPage = 0;
             break;
 
-		case "BTN_ACHIEVEMENT":
+		case "BTN_EXIT":
+				Debug.Log("BTN_EXIT");
+				UIHandler.Instance.RequestToEnableObject(7);
+				break;
+
+			case "BTN_ACHIEVEMENT":
 			Debug.Log ("BTN_ACHIEVEMENT");
 			//if (AdsManager.Instance) {
 
