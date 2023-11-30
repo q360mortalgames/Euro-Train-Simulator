@@ -22,14 +22,15 @@ public class MenuPageHandler : MonoBehaviour
 
 	void Start ()
 	{
-        //if (AdsManager.Instance) {
-        //	AdsManager.Instance.RequestToShowAds (ADS_STATE.MENU_PAGE, 0);
-        //}
+		//if (AdsManager.Instance) {
+		//	AdsManager.Instance.RequestToShowAds (ADS_STATE.MENU_PAGE, 0);
+		//}
 
-        //if (AdsManager.Instance) {
-        //	AdsManager.Instance.RequestToAuthenticatePlayer ();
-        //}
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		//if (AdsManager.Instance) {
+		//	AdsManager.Instance.RequestToAuthenticatePlayer ();
+		//}
+		Time.timeScale = 1;
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
     }
 
