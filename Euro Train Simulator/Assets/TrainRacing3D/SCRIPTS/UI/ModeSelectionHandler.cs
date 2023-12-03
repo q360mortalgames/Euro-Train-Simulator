@@ -124,7 +124,8 @@ public class ModeSelectionHandler : MonoBehaviour
 			break;	
 
 		case "TEX_COINS_PLUS":
-			UIHandler.Instance.RequestToEnableObject (2);
+				GlobalVariables.CoinsClicked = true;
+				UIHandler.Instance.RequestToEnableObject (2);
 			break;	
 
 		case "BTN_GIFT":

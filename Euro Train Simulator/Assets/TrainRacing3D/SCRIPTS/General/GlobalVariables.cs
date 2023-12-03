@@ -166,6 +166,8 @@ public static class GlobalVariables
 	public static int iVisibleLayer = 0;
 	public static int iInvisibleLayer = 31;
 
+	public static bool CoinsClicked = false;
+
 
 	// LEVEL
 	public static string sTotalUnlockedLevels	= "UnloackedLevelsCount";

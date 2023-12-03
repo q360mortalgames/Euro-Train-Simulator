@@ -11,6 +11,7 @@ public class levelselectionNew : MonoBehaviour {
 	[SerializeField] ScrollRect scrollRect;
 	public Image[] AllLevels;
 	public GameObject[] levelInfo;
+	public GameObject UnlockAlllevelsBtn;
 
 	public int[] Xpdata,stopCount,Timeval;
 
@@ -52,7 +53,9 @@ public class levelselectionNew : MonoBehaviour {
 		CheckLevelLocks ();
 	}
 
-	void CheckLevelLocks(){
+	public void CheckLevelLocks()
+	{
+	    UnlockAlllevelsBtn.SetActive(PlayerPrefs.GetInt(GlobalVariables.sTotalUnlockedLevels) < 10);
 		int lnum;
 		for(int i=0;i<AllLevels.Length;i++){
 			if ((i + 1) <= PlayerPrefs.GetInt (GlobalVariables.sTotalUnlockedLevels, 1)) {
@@ -140,7 +143,7 @@ public class levelselectionNew : MonoBehaviour {
 
 	
 		if(_click.name=="TEX_COINS_PLUS"){
-
+			GlobalVariables.CoinsClicked = true;
 			UIHandler.Instance.RequestToEnableObject (2);
 
 		}

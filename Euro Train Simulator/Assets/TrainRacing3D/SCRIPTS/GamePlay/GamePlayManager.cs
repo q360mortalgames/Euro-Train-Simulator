@@ -477,15 +477,15 @@ public class GamePlayManager : MonoBehaviour
 			} else if ((_str == "ReverseBtn") && !IsInstructionAvlaiable) {
 				/*StopTrainImediatly ();*/
 				SoundController.Instance.OnButtonClick ();
-				StopTrainImediatly ();
-				TakeReverseDirection ();
-
 					//#if VIDEOTESTING || UNITY_EDITOR
 					//VWatchedContinue();
 					//else
 					//GoogleMobileAdsDemoScript.mee.ShowRewardBasedVideo();
 					//#endif
-				//	Admanager.instance.ShowRewardedAd();
+					AdsManagerRwd.Instance.ShowRewardedAd((bool status)=> {
+						StopTrainImediatly();
+						TakeReverseDirection();
+					});
 				}
 			else if((_str == "CloseCrash") && !IsInstructionAvlaiable) {
 				//levelCrashed = false;

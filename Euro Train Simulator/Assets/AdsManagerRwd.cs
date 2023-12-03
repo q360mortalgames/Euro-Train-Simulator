@@ -10,6 +10,7 @@ public class AdsManagerRwd : MonoBehaviour
     RewardedAd rewardedAd;
     public string _adUnitId;
     public static AdsManagerRwd Instance;
+    private Action<bool> adsShown;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +56,9 @@ public class AdsManagerRwd : MonoBehaviour
     }
 
 
-    public void ShowRewardedAd()
+    public void ShowRewardedAd(Action<bool> callback)
     {
+        adsShown = callback;
         const string rewardMsg =
             "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
 
@@ -64,8 +66,9 @@ public class AdsManagerRwd : MonoBehaviour
         {
             rewardedAd.Show((Reward reward) =>
             {
+                adsShown?.Invoke(true);
                 // TODO: Reward the user.
-              //  uiScript.OnUserEarnedReward();
+                //  uiScript.OnUserEarnedReward();
             });
         }
     }

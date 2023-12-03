@@ -187,6 +187,29 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+
+	public void UnlockAllTrains()
+    {
+		for (int i = 0; i < GlobalVariables.iTotalTrainsAvalaiable; i++)
+		{
+			TRAINS[i] = "1";
+			string _currentTrainID = "";
+			foreach (string id in TRAINS)
+			{
+				_currentTrainID += id + "#";
+			}
+
+			allTrainIDs = _currentTrainID;
+			allTrainIDs = allTrainIDs.TrimEnd(new char[] { '#' });
+			PlayerPrefs.SetString("TRAINS", allTrainIDs);
+		}
+	}
+	public void UnlockAllLevels()
+    {
+		PlayerPrefs.SetInt(GlobalVariables.sTotalUnlockedLevels, GlobalVariables.iTotalLevels);
+		PlayerPrefs.SetInt("TotalLevelsToUnlock", GlobalVariables.iTotalLevels);
+	}
+
 	void SetCurrentValueToDB (int pIndex, GAME_STATE _gState)
 	{
 		switch (_gState) {
@@ -202,9 +225,9 @@ public class GameManager : MonoBehaviour
 			allTrainIDs = allTrainIDs.TrimEnd (new char[]{ '#' });		
 			PlayerPrefs.SetString ("TRAINS", allTrainIDs);
 
-			if (TrainSelectionHandler.Instance) {
-				TrainSelectionHandler.Instance.ResetData ();
-			}
+			//if (TrainSelectionHandler.Instance) {
+			//	TrainSelectionHandler.Instance.ResetData ();
+			//}
 
 			// for Achivement
 			if (pIndex == 1 || pIndex == 4) {

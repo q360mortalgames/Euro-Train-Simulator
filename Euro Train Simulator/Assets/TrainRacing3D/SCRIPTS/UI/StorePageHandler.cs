@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Purchasing;
 
 public class StorePageHandler : MonoBehaviour
 {
@@ -27,22 +28,39 @@ public class StorePageHandler : MonoBehaviour
 
 	void TotalCoinInfo ()
 	{
-
 		if (GameManager.Instance && GameManager.Instance.totalCoins != tempTotalCoins) {
 			tempTotalCoins = GameManager.Instance.totalCoins;
 			_totalCoins.text = tempTotalCoins.ToString ();
 			PlayerPrefs.SetInt ("totalCoins", GameManager.Instance.totalCoins);
+			if(GlobalVariables.CoinsClicked)
+            {
+				GlobalVariables.CoinsClicked = false;
+				Invoke(nameof(OnCoinClicked),0.1f);
+            }
+			else
+            {
+				Invoke(nameof(ResetScrollRect), 0.1f);
+			}
 		}
-		scrollRect.horizontalNormalizedPosition = 0f;
 	}
 
-//	void Update ()
-//	{
-//
-//		if (GlobalVariables.isBackNavigation && Input.GetKeyUp (KeyCode.Escape)) {
-//			UIHandler.Instance.RequestToEnableObject (UIHandler.Instance.previousPage);
-//		}
-//	}
+    private void ResetScrollRect()
+    {
+		if (scrollRect != null) scrollRect.horizontalNormalizedPosition = 0f;
+	}
+
+    public void OnCoinClicked()
+    {
+		if(scrollRect!=null)scrollRect.horizontalNormalizedPosition = 1f;
+	}
+
+	//	void Update ()
+	//	{
+	//
+	//		if (GlobalVariables.isBackNavigation && Input.GetKeyUp (KeyCode.Escape)) {
+	//			UIHandler.Instance.RequestToEnableObject (UIHandler.Instance.previousPage);
+	//		}
+	//	}
 
 
 	void OnEnable ()
@@ -124,4 +142,5 @@ public class StorePageHandler : MonoBehaviour
 		}
 		#endregion
 	}
+
 }

@@ -111,6 +111,7 @@ public class SettingPageHandler : MonoBehaviour {
 			break;
 
 		case "TEX_COINS_PLUS":
+		    GlobalVariables.CoinsClicked = true;
 			UIHandler.Instance.RequestToEnableObject (2);
 			break;	
 

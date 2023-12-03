@@ -108,7 +108,9 @@ public class TrainSelectionHandler : MonoBehaviour {
 
 	bool IsUnlockAllTrains(){
 		
-		if (GameManager.Instance.TRAINS [2].Equals ("1") && GameManager.Instance.TRAINS [3].Equals ("1") && GameManager.Instance.TRAINS [4].Equals ("1") && GameManager.Instance.TRAINS [5].Equals ("1") && GameManager.Instance.TRAINS [6].Equals ("1")) { 
+		if (GameManager.Instance.TRAINS [2].Equals ("1") && GameManager.Instance.TRAINS [3].Equals ("1") 
+			&& GameManager.Instance.TRAINS [4].Equals ("1") && GameManager.Instance.TRAINS [5].Equals ("1") 
+			&& GameManager.Instance.TRAINS [6].Equals ("1")) { 
 			return false;
 		}
 		return true;
@@ -273,7 +275,8 @@ public class TrainSelectionHandler : MonoBehaviour {
 
 		case "TEX_COINS_PLUS":
 			GlobalVariables.iMenuEnableIndex = 2;
-			StartCoroutine (RequestToLoadNextScene (0f,"GameUI","GameUI"));
+				GlobalVariables.CoinsClicked = true;
+				StartCoroutine (RequestToLoadNextScene (0f,"GameUI","GameUI"));
 			break;
 
 		case "BTN_Gift":
