@@ -11,19 +11,19 @@ public class IAPPurchaseComplete : MonoBehaviour
 
 		switch (product.definition.id)
 		{
-
-			case "com.q360mortalgames.noads":
+			case "com.eurotrain.noads":
+				AdsManager.Instance.OnPurchasedRemoveAds();
 				break;
 
-			case "com.q360mortalgames.unlockalllevels":
+			case "com.eurotrain.unlockalllevels":
 				GameManager.Instance.UnlockAllLevels();
 				break;
 
-			case "com.q360mortalgames.unlockalltrains":
+			case "com.eurotrain.unlockalltrains":
 				GameManager.Instance.UnlockAllTrains();
 				break;
 
-			case "com.q360mortalgames.unlockalltrainsandkevels":
+			case "com.eurotrain.unlockalltrainsandkevels":
 				GameManager.Instance.UnlockAllTrains();
 				GameManager.Instance.UnlockAllLevels();
 				break;

@@ -20,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SCENES/TutorialMode.unity
     guid: 610f3f274d77d5242be320707379ae2e
-  - enabled: 1
-    path: Assets/SCENES/FreeMode-Unlimited.unity
-    guid: f4e4682a35a1aec41a5926896b7cde13
   m_configObjects: {}

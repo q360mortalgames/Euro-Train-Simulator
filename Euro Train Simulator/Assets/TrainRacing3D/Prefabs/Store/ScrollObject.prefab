@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.q360mortalgames.unlockalltrainsandkevels
+  productId: com.eurotrain.unlockalltrainsandkevels
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -1539,7 +1539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.q360mortalgames.unlockalltrainsandkevels
+  productId: com.eurotrain.unlockalltrains
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -1909,7 +1909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.q360mortalgames.unlockalltrainsandkevels
+  productId: com.eurotrain.unlockalllevels
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -2269,9 +2269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.q360mortalgames.noads
+  productId: com.eurotrain.noads
   buttonType: 0
-  consumePurchase: 0
+  consumePurchase: 1
   onTransactionsRestored:
     m_PersistentCalls:
       m_Calls: []
