@@ -9,23 +9,11 @@ EditorBuildSettings:
     path: Assets/SCENES/LoadingPage.unity
     guid: fe9e0cfc21c9b114f984d04e737fa90a
   - enabled: 1
-    path: Assets/SCENES/Game_levels 1.unity
-    guid: 751652bf2422bd6438ed4e64eaeb7f60
-  - enabled: 1
-    path: Assets/SCENES/Game_levels 2.unity
-    guid: 532e9be56a905e8489f28a1547c663ca
-  - enabled: 1
-    path: Assets/SCENES/Game_levels 3.unity
-    guid: 8d631aa3ace942d4d8f9c4c77fb9f8c9
-  - enabled: 1
     path: Assets/SCENES/Game_levels.unity
     guid: f5f3924b015cb0f4291a6421196e96ae
   - enabled: 1
     path: Assets/SCENES/GameUI.unity
     guid: a48b105771c27b04985714f3d403ec4d
-  - enabled: 1
-    path: Assets/SCENES/TitlePage.unity
-    guid: 4a658b664f3ef7745b1c403ef8c52ae2
   - enabled: 1
     path: Assets/SCENES/TrainSelectionPage.unity
     guid: 4f68a48b3c421c64191d256b78e96796

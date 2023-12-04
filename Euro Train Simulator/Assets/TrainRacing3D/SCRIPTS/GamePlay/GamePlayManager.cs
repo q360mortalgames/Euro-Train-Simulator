@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Runtime.InteropServices;
+using System;
 
 public class GamePlayManager : MonoBehaviour
 {
@@ -408,7 +409,7 @@ public class GamePlayManager : MonoBehaviour
 		//Debug.Log ("--Directin Change::" + _gDirectionChangeSlider.value);
 	}
 
-	[HideInInspector]
+//	[HideInInspector]
 	public bool isTutorialCompletePopUpShow;
 
 	public void OnDirectionChnageSliderClick ()
@@ -461,11 +462,12 @@ public class GamePlayManager : MonoBehaviour
 						//if (AdsManager.Instance) {
 						//	AdsManager.Instance.RequestToShowAds (ADS_STATE.LEVEL_COMPLETE, 2.0f);
 						//}
-					//	Admanager.instance.ShowFullScreenAd();
-					PlayerPrefs.SetInt ("TutorialComplete", 1);
+						//	Admanager.instance.ShowFullScreenAd();
 					ChangeInstructionState (e_INSTRUCTION_STATE.NoInstruction);
 					_TutorialComplete.CallAllAnims ();
-				}
+						PlayerPrefs.SetInt ("TutorialComplete", 1);
+                     UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("GameUI");
+					}
 
 			} else if ((_str == "PauseButton") && !IsInstructionAvlaiable) {
 				OnPauseClick ();
@@ -1164,9 +1166,12 @@ public class GamePlayManager : MonoBehaviour
 	[HideInInspector]public bool levelCrashed = false;
 	public void OnLevelCrashed()
 	{		
-		StopTrainImediatly ();
-		SetVisibleLayer (_LevelCrashed.transform);
+		if (_LevelCrashed != null)
+		{
+			StopTrainImediatly();
+			SetVisibleLayer(_LevelCrashed.transform);
 		_LevelCrashed.CallAllAnims ();
+		}
 		levelCrashed = true;
 		Debug.Log ("--OnLevelCrashed");
 	}
@@ -2169,6 +2174,7 @@ public class GamePlayManager : MonoBehaviour
 
 	public void ChangeInstructionState (e_INSTRUCTION_STATE mState)
 	{
+		Debug.Log($"mState:{mState} {Environment.StackTrace}");
 		GlobalVariables.mInsState	= mState;
 		if (InstructionHandler.Instance)
 			InstructionHandler.Instance.ChangeInstructionState ();

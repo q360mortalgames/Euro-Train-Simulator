@@ -27,6 +27,7 @@ public class AdsManager : MonoBehaviour
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             LoadInterstitialAd();
+            AdsManagerRwd.Instance.LoadRewardedAd();
         });
 
     }
@@ -43,7 +44,6 @@ public class AdsManager : MonoBehaviour
 
         // create our request used to load the ad.
         var adRequest = new AdRequest.Builder()
-                .AddKeyword("unity-admob-sample")
                 .Build();
 
         // send the request to load the ad.

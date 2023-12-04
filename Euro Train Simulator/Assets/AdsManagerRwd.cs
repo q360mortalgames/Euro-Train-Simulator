@@ -12,12 +12,12 @@ public class AdsManagerRwd : MonoBehaviour
     public static AdsManagerRwd Instance;
     private Action<bool> adsShown;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        MobileAds.Initialize((InitializationStatus initStatus) =>
-        {
-            LoadRewardedAd();
-        });
+        //MobileAds.Initialize((InitializationStatus initStatus) =>
+        //{
+        //    LoadRewardedAd();
+        //});
         Instance = this;
     }
 
@@ -34,7 +34,7 @@ public class AdsManagerRwd : MonoBehaviour
 
         // create our request used to load the ad.
         var adRequest = new AdRequest.Builder().Build();
-
+        
         // send the request to load the ad.
         RewardedAd.Load(_adUnitId, adRequest,
             (RewardedAd ad, LoadAdError error) =>

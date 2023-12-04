@@ -288,5 +288,11 @@ public class GameManager : MonoBehaviour
 
 	#endregion
 
+
+	[ContextMenu("DeleteAllPrefs")]
+	void PrefsDeleteAll()
+    {
+		PlayerPrefs.DeleteAll();
+	}
 }
 
