@@ -138,9 +138,9 @@ public class TrainSelectionHandler : MonoBehaviour {
 		StartCoroutine(ieRequestToLockTexture());
 
 		BTN_PLAY.gameObject.SetActive (isPlayBtnEnable);
-		BTN_BUY.gameObject.SetActive (GlobalVariables.i_CurrentTrainSelected !=1?!isPlayBtnEnable:false);
+		BTN_BUY.gameObject.SetActive (!isPlayBtnEnable);
 
-		BTN_UNLOCK_FB.gameObject.SetActive (GlobalVariables.i_CurrentTrainSelected == 1 && GameManager.Instance.TRAINS [GlobalVariables.i_CurrentTrainSelected].Equals ("0")?true:false);
+		BTN_UNLOCK_FB.gameObject.SetActive(false);// (GlobalVariables.i_CurrentTrainSelected == 1 && GameManager.Instance.TRAINS [GlobalVariables.i_CurrentTrainSelected].Equals ("0")?true:false);
 
 		_trainCost.text = TrainCost[GlobalVariables.i_CurrentTrainSelected].ToString();
 
@@ -210,10 +210,8 @@ public class TrainSelectionHandler : MonoBehaviour {
 			
 			Debug.Log ("BTN_BUY :" + GlobalVariables.i_CurrentTrainSelected);
 			GameManager.Instance.RequestToBuyTrain (TrainCost [GlobalVariables.i_CurrentTrainSelected], GlobalVariables.i_CurrentTrainSelected, GAME_STATE.TRAIN_SELECTION);
-            
-
-
-			break;
+		    ResetData();
+         	break;
 
 		case "BTN_BACK":			
 			GlobalVariables.iMenuEnableIndex = 0;

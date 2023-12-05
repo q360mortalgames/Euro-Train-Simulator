@@ -254,9 +254,18 @@ public class GameManager : MonoBehaviour
 			PlayerPrefs.SetInt ("totalCoins", GameManager.Instance.totalCoins);
 			SetCurrentValueToDB (_trainID, _gState);
 		} else {
-			Debug.Log ("Sorry......... krishna");
-//			UIHandler.Instance.RequestToEnableObject (2);
+			Debug.Log("Not enough coins");
+			TrainSelectionHandler.Instance.OnClick("TEX_COINS_PLUS");
+		//	UIHandler.Instance.RequestToEnableObject (0);
 		}
+	}
+
+	public void AddCoins(int amount)
+    {
+		totalCoins = GameManager.Instance.totalCoins + amount;
+		PlayerPrefs.SetInt("totalCoins", totalCoins);
+		if(StorePageHandler.Instance)
+		StorePageHandler.Instance.UpdateCoins();
 	}
 
 	IEnumerator ieRequestToLoadNextScene (float lTime)

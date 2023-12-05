@@ -593,19 +593,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8782026890854997109}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnClick
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BTN_PACK_4
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!95 &8782026890854997111
 Animator:
   serializedVersion: 5
@@ -639,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: 
+  productId: com.eurotrain.coinpack01
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -647,14 +635,26 @@ MonoBehaviour:
       m_Calls: []
   onPurchaseComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 492668663}
+        m_TargetAssemblyTypeName: IAPPurchaseComplete, Assembly-CSharp
+        m_MethodName: OnPurchaseComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPurchaseFailed:
     m_PersistentCalls:
       m_Calls: []
   onProductFetched:
     m_PersistentCalls:
       m_Calls: []
-  button: {fileID: 0}
+  button: {fileID: 8782026890854997106}
 --- !u!1 &8782026891059387470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,19 +1690,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8782026891496220799}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnClick
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BTN_PACK_5
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!95 &8782026891496220785
 Animator:
   serializedVersion: 5
@@ -1736,7 +1724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: 
+  productId: com.eurotrain.coinpack02
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -1744,14 +1732,26 @@ MonoBehaviour:
       m_Calls: []
   onPurchaseComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 492668663}
+        m_TargetAssemblyTypeName: IAPPurchaseComplete, Assembly-CSharp
+        m_MethodName: OnPurchaseComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPurchaseFailed:
     m_PersistentCalls:
       m_Calls: []
   onProductFetched:
     m_PersistentCalls:
       m_Calls: []
-  button: {fileID: 0}
+  button: {fileID: 8782026891496220796}
 --- !u!1 &8782026891610037053
 GameObject:
   m_ObjectHideFlags: 0

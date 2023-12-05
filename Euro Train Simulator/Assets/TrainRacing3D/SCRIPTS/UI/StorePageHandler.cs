@@ -44,6 +44,11 @@ public class StorePageHandler : MonoBehaviour
 		}
 	}
 
+	public void UpdateCoins()
+    {
+		_totalCoins.text = GameManager.Instance.totalCoins.ToString();
+	}
+
     private void ResetScrollRect()
     {
 		if (scrollRect != null) scrollRect.horizontalNormalizedPosition = 0f;

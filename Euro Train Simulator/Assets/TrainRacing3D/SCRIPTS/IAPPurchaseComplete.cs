@@ -28,6 +28,14 @@ public class IAPPurchaseComplete : MonoBehaviour
 				GameManager.Instance.UnlockAllLevels();
 				break;
 
+			case "com.eurotrain.coinpack01":
+				GameManager.Instance.AddCoins(125000);
+				break;
+
+			case "com.eurotrain.coinpack02":
+				GameManager.Instance.AddCoins(250000);
+				break;
+
 			default:
 				break;
 		}
