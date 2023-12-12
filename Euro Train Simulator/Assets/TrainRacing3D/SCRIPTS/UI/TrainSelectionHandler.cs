@@ -267,7 +267,10 @@ public class TrainSelectionHandler : MonoBehaviour {
 
 			break;
 
-		case "BTN_PLAY":			
+		case "BTN_PLAY":
+#if !UNITY_EDITOR
+				AdsManager.Instance.ShowAd();
+#endif
 			StartCoroutine (RequestToLoadNextScene (0f,"LoadingPage",GlobalVariables.loadScene));
 			break;
 
@@ -283,11 +286,11 @@ public class TrainSelectionHandler : MonoBehaviour {
 		}
 
 	}
-	#endregion
+#endregion
 
 
 
-	#region VideoAd
+#region VideoAd
 	public static string videosKey = "videosWatched";
 	int trainToUnlock = 3;
 	void CheckForVideoAvailablity(){
@@ -326,6 +329,6 @@ public class TrainSelectionHandler : MonoBehaviour {
 		}
 		return PlayerPrefs.GetInt (videosKey, 5)+"";
 	}
-	#endregion
+#endregion
 
 }
